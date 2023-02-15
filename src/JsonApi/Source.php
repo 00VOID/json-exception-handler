@@ -38,7 +38,6 @@ class Source implements Arrayable
     /**
      * Set pointer.
      *
-     * @param  string  $pointer
      *
      * @return  self
      */
@@ -62,7 +61,6 @@ class Source implements Arrayable
     /**
      * Set parameter.
      *
-     * @param  string  $parameter
      *
      * @return  self
      */

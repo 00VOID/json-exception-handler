@@ -13,16 +13,14 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class JsonHandlerTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
         $this->loadLaravelMigrations(['--database' => 'exceptions']);
-
-        $this->setUpRoutes();
     }
 
-    public function setUpRoutes()
+    public function defineRoutes($router): void
     {
         Route::get('default_exception', function (Request $request) {
             throw new Exception('Test message', 1);

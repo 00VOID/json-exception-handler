@@ -11,7 +11,6 @@ trait JsonHandler
      * Handle the json response. Check if exception is treated. If true call
      * the specific handler. If false set the default response to be returned.
      *
-     * @param  \Throwable  $exception
      *
      * @return \Illuminate\Http\JsonResponse
      */

@@ -23,7 +23,7 @@ abstract class AbstractResponse
     /**
      * Create new Response response passing the errors.
      *
-     * @param \SMartins\Exceptions\Response\ErrorHandledCollectionInterface $errors
+     * @param  \SMartins\Exceptions\Response\ErrorHandledCollectionInterface  $errors
      */
     public function __construct(ErrorHandledCollectionInterface $errors)
     {
@@ -46,7 +46,6 @@ abstract class AbstractResponse
      * Set the HTTP status code.
      *
      * @param  int  $status  The HTTP status code.
-     *
      * @return  self
      */
     public function setStatus(int $status)
@@ -68,8 +67,6 @@ abstract class AbstractResponse
 
     /**
      * Returns JSON response.
-     *
-     * @return \Illuminate\Http\JsonResponse
      */
     abstract public function json(): JsonResponse;
 }

@@ -15,8 +15,6 @@ interface ErrorHandledInterface
 
     /**
      * Get the HTTP status code applicable to this problem, expressed as a string value.
-     *
-     * @return  string
      */
     public function getStatus(): string;
 }

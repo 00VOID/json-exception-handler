@@ -5,13 +5,13 @@ namespace SMartins\Exceptions\Handlers;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use SMartins\Exceptions\JsonApi\Error;
 use SMartins\Exceptions\JsonApi\Source;
+use SMartins\Exceptions\Response\ErrorHandledCollectionInterface;
+use SMartins\Exceptions\Response\ErrorHandledInterface;
 
 class OAuthServerHandler extends AbstractHandler
 {
     /**
      * Create instance using the Exception to be handled.
-     *
-     * @param \League\OAuth2\Server\Exception\OAuthServerException $e
      */
     public function __construct(OAuthServerException $e)
     {
@@ -21,9 +21,9 @@ class OAuthServerHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
-    public function handle()
+    public function handle(): ErrorHandledInterface|ErrorHandledCollectionInterface
     {
-        return (new Error)->setStatus($this->getHttpStatusCode())
+        return (new Error())->setStatus($this->getHttpStatusCode())
             ->setCode($this->getCode())
             ->setSource((new Source())->setPointer($this->getDefaultPointer()))
             ->setTitle($this->exception->getErrorType())

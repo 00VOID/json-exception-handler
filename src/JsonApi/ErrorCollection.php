@@ -45,7 +45,6 @@ class ErrorCollection extends Collection implements ErrorHandledCollectionInterf
     /**
      * Set the status code.
      *
-     * @param string $statusCode
      *
      * @return self
      */
@@ -58,10 +57,6 @@ class ErrorCollection extends Collection implements ErrorHandledCollectionInterf
 
     /**
      * Set the headers of response.
-     *
-     * @param array $headers
-     *
-     * @return self
      */
     public function setHeaders(array $headers): self
     {

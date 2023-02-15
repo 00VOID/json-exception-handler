@@ -16,7 +16,6 @@ interface ErrorCollectionInterface extends Arrayable
     /**
      * Set HTTP status code of response.
      *
-     * @param string $statusCode
      *
      * @return static
      */

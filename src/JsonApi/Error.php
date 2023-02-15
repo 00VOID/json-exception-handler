@@ -72,10 +72,6 @@ class Error implements Arrayable, ErrorHandledInterface
 
     /**
      * Set a unique identifier for this particular occurrence of the problem.
-     *
-     * @param string $id
-     *
-     * @return self
      */
     public function setId(string $id): self
     {
@@ -97,9 +93,7 @@ class Error implements Arrayable, ErrorHandledInterface
     /**
      * Set the value of links.
      *
-     * @param \SMartins\Exceptions\JsonApi\Links  $links
-     *
-     * @return self
+     * @param  \SMartins\Exceptions\JsonApi\Links  $links
      */
     public function setLinks(Links $links): self
     {
@@ -118,10 +112,6 @@ class Error implements Arrayable, ErrorHandledInterface
 
     /**
      * Set the HTTP status code applicable to this problem, expressed as a string value.
-     *
-     * @param string $status
-     *
-     * @return self
      */
     public function setStatus(string $status): self
     {
@@ -142,10 +132,6 @@ class Error implements Arrayable, ErrorHandledInterface
 
     /**
      * Set an application-specific error code, expressed as a string value.
-     *
-     * @param string $code
-     *
-     * @return self
      */
     public function setCode(string $code): self
     {
@@ -156,8 +142,6 @@ class Error implements Arrayable, ErrorHandledInterface
 
     /**
      * Get occurrence to occurrence of the problem, except for purposes of localization.
-     *
-     * @return string
      */
     public function getTitle(): string
     {
@@ -166,10 +150,6 @@ class Error implements Arrayable, ErrorHandledInterface
 
     /**
      * Set occurrence to occurrence of the problem, except for purposes of localization.
-     *
-     * @param string $title
-     *
-     * @return self
      */
     public function setTitle(string $title): self
     {
@@ -190,10 +170,6 @@ class Error implements Arrayable, ErrorHandledInterface
 
     /**
      * Set like title, this field’s value can be localized.
-     *
-     * @param string $detail
-     *
-     * @return self
      */
     public function setDetail(string $detail): self
     {
@@ -215,9 +191,7 @@ class Error implements Arrayable, ErrorHandledInterface
     /**
      * Set an object containing references to the source of the error.
      *
-     * @param \SMartins\Exceptions\JsonApi\Source  $source
-     *
-     * @return self
+     * @param  \SMartins\Exceptions\JsonApi\Source  $source
      */
     public function setSource(Source $source): self
     {

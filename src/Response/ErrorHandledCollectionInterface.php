@@ -9,8 +9,6 @@ interface ErrorHandledCollectionInterface extends ErrorCollectionInterface
      * $type parameter. If one item on collection was different of type an
      * exception is thrown.
      *
-     * @param  string $type
-     * @return self
      *
      * @throws \SMartins\Exceptions\Response\InvalidContentException
      */

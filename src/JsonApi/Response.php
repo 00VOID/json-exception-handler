@@ -9,8 +9,6 @@ class Response extends AbstractResponse
 {
     /**
      * Returns JSON response.
-     *
-     * @return \Illuminate\Http\JsonResponse
      */
     public function json(): JsonResponse
     {
