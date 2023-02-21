@@ -62,20 +62,6 @@ abstract class AbstractHandler
     abstract public function handle();
 
     /**
-     * Get error code. If code is empty from config file based on type.
-     *
-     * @param  string  $type Code type from config file
-     */
-    public function getCode(string $type = 'default'): int
-    {
-        if (empty($code = $this->exception->getCode())) {
-            return config('json-exception-handler.codes.'.$type);
-        }
-
-        return $code;
-    }
-
-    /**
      * Return response with handled exception.
      *
      *

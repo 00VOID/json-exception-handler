@@ -22,7 +22,6 @@ class OAuthServerHandler extends AbstractHandler
     public function handle()
     {
         return (new Error())->setStatus($this->getHttpStatusCode())
-            ->setCode($this->getCode())
             ->setSource((new Source())->setPointer($this->getDefaultPointer()))
             ->setTitle($this->exception->getErrorType())
             ->setDetail($this->exception->getMessage());

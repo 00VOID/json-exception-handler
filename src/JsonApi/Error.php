@@ -119,27 +119,7 @@ class Error implements Arrayable, ErrorHandledInterface
 
         return $this;
     }
-
-    /**
-     * Get an application-specific error code, expressed as a string value.
-     *
-     * @return string
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    /**
-     * Set an application-specific error code, expressed as a string value.
-     */
-    public function setCode(string $code): self
-    {
-        $this->code = $code;
-
-        return $this;
-    }
-
+    
     /**
      * Get occurrence to occurrence of the problem, except for purposes of localization.
      */

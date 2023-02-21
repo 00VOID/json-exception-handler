@@ -25,13 +25,6 @@ class ErrorTest extends TestCase
         $this->assertEquals($links, $error->getLinks());
     }
 
-    public function testGetAndSetCode()
-    {
-        $error = new Error;
-        $this->assertInstanceOf(Error::class, $error->setCode(1));
-        $this->assertEquals(1, $error->getCode());
-    }
-
     public function testGetAndSetTitle()
     {
         $error = new Error;

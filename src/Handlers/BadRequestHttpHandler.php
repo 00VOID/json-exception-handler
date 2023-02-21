@@ -15,7 +15,6 @@ class BadRequestHttpHandler extends AbstractHandler
     public function handle()
     {
         return (new Error())->setStatus(400)
-            ->setCode($this->getCode('bad_request'))
             ->setSource((new Source())->setPointer($this->getDefaultPointer()))
             ->setTitle($this->getDefaultTitle())
             ->setDetail($this->exception->getMessage());

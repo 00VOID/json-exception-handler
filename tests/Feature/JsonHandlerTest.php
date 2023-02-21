@@ -111,7 +111,6 @@ class JsonHandlerTest extends TestCase
         return [
             'errors' => [[
                 'status',
-                'code',
                 'title',
                 'detail',
                 'source' => ['pointer']

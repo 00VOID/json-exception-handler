@@ -27,7 +27,6 @@ class ModelNotFoundHandler extends AbstractHandler
         $detail = __('exception::exceptions.model_not_found.title', ['model' => $entity]);
 
         return (new Error())->setStatus(404)
-            ->setCode($this->getCode('model_not_found'))
             ->setSource((new Source())->setPointer('data/id'))
             ->setTitle(Str::snake(class_basename($this->exception)))
             ->setDetail($detail);

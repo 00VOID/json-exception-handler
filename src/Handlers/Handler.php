@@ -13,7 +13,6 @@ class Handler extends AbstractHandler
     public function handle()
     {
         return (new Error())->setStatus($this->getStatusCode())
-            ->setCode($this->getCode())
             ->setSource((new Source())->setPointer($this->getDefaultPointer()))
             ->setTitle($this->getDefaultTitle())
             ->setDetail($this->exception->getMessage());
