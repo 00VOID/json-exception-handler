@@ -81,6 +81,6 @@ class ValidationHandler extends AbstractHandler
      */
     public function getFailedFieldsRules(): array
     {
-        return $this->exception->validator->failed();
+        return $this->exception->validator->errors();
     }
 }
