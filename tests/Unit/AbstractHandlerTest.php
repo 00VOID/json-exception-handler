@@ -26,7 +26,7 @@ class AbstractHandlerTest extends TestCase
 
     public function testValidateHandledExceptionWithInvalidArgument()
     {
-        $this->expectException(\TypeError::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $handler = new Handler(new \Exception);
         $handler->validatedHandledException(new \RuntimeException());

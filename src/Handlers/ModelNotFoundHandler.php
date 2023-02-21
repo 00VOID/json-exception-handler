@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Str;
 use SMartins\Exceptions\JsonApi\Error;
 use SMartins\Exceptions\JsonApi\Source;
-use SMartins\Exceptions\Response\ErrorHandledCollectionInterface;
-use SMartins\Exceptions\Response\ErrorHandledInterface;
 
 class ModelNotFoundHandler extends AbstractHandler
 {
@@ -22,7 +20,7 @@ class ModelNotFoundHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
-    public function handle(): ErrorHandledInterface|ErrorHandledCollectionInterface
+    public function handle()
     {
         $entity = $this->extractEntityName($this->exception->getModel());
 

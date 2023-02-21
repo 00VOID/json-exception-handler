@@ -4,15 +4,13 @@ namespace SMartins\Exceptions\Handlers;
 
 use SMartins\Exceptions\JsonApi\Error;
 use SMartins\Exceptions\JsonApi\Source;
-use SMartins\Exceptions\Response\ErrorHandledCollectionInterface;
-use SMartins\Exceptions\Response\ErrorHandledInterface;
 
 class MissingScopeHandler extends AbstractHandler
 {
     /**
      * {@inheritdoc}
      */
-    public function handle(): ErrorHandledInterface|ErrorHandledCollectionInterface
+    public function handle()
     {
         return (new Error())->setStatus(403)
             ->setCode($this->getCode('missing_scope'))

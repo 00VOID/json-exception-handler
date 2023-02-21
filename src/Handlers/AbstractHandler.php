@@ -23,7 +23,7 @@ abstract class AbstractHandler
     /**
      * The exception thrown.
      */
-    protected Throwable|Exception $exception;
+    protected \Throwable $exception;
 
     /**
      * An array where the key is the class exception and the value is the handler
@@ -50,7 +50,7 @@ abstract class AbstractHandler
     /**
      * Create instance using the Exception to be handled.
      */
-    public function __construct(Throwable|Exception $e)
+    public function __construct(\Throwable $e)
     {
         $this->exception = $e;
     }
@@ -59,7 +59,7 @@ abstract class AbstractHandler
      * Handle with an exception according to specific definitions. Returns one
      * or more errors using the exception from $exceptions attribute.
      */
-    abstract public function handle(): ErrorHandledInterface|ErrorHandledCollectionInterface;
+    abstract public function handle();
 
     /**
      * Get error code. If code is empty from config file based on type.
@@ -98,19 +98,23 @@ abstract class AbstractHandler
      *
      * @throws InvalidContentException
      */
-    public function validatedHandledException(ErrorHandledInterface|ErrorHandledCollectionInterface $error): ErrorHandledCollectionInterface
+    public function validatedHandledException($error): ErrorHandledCollectionInterface
     {
         if ($error instanceof ErrorHandledCollectionInterface) {
             return $error->validatedContent(ErrorHandledInterface::class);
         }
 
-        return $error->toCollection()->setStatusCode($error->getStatus());
+        if ($error instanceof ErrorHandledInterface) {
+            return $error->toCollection()->setStatusCode($error->getStatus());
+        }
+
+        throw new InvalidArgumentException('The errors must be an instance of ['.ErrorHandledInterface::class.'] or ['.ErrorHandledCollectionInterface::class.'].');
     }
 
     /**
      * Get the class the will handle the Exception from exceptionHandlers attributes.
      */
-    public function getExceptionHandler(): mixed
+    public function getExceptionHandler()
     {
         $handlers = $this->getConfiguredHandlers();
 

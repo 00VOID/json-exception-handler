@@ -5,15 +5,13 @@ namespace SMartins\Exceptions\Handlers;
 use SMartins\Exceptions\JsonApi\Error;
 use SMartins\Exceptions\JsonApi\ErrorCollection;
 use SMartins\Exceptions\JsonApi\Source;
-use SMartins\Exceptions\Response\ErrorHandledCollectionInterface;
-use SMartins\Exceptions\Response\ErrorHandledInterface;
 
 class ValidationHandler extends AbstractHandler
 {
     /**
      * {@inheritdoc}
      */
-    public function handle(): ErrorHandledInterface|ErrorHandledCollectionInterface
+    public function handle()
     {
         $errors = (new ErrorCollection())->setStatusCode(422);
 

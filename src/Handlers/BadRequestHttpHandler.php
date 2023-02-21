@@ -12,7 +12,7 @@ class BadRequestHttpHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
-    public function handle(): ErrorHandledInterface|ErrorHandledCollectionInterface
+    public function handle()
     {
         return (new Error())->setStatus(400)
             ->setCode($this->getCode('bad_request'))

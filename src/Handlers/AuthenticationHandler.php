@@ -12,7 +12,7 @@ class AuthenticationHandler extends AbstractHandler
     /**
      * {@inheritdoc}
      */
-    public function handle(): ErrorHandledInterface|ErrorHandledCollectionInterface
+    public function handle()
     {
         return (new Error())->setStatus(401)
             ->setCode($this->getCode('authentication'))
